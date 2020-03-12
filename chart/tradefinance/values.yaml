@@ -1,0 +1,148 @@
+# Default values for tradefinance.
+# This is a YAML-formatted file.
+# Declare variables to be passed into your templates.
+
+replicaCount: 1
+
+image:
+  registry: gcr.io
+  repository: coe-marketplace-215839-public/tradefinance
+  tag: latest
+  pullPolicy: Always
+  #registry: docker.io
+  #repository: abhinavkbij/tradefinance
+  #tag: latest
+  #pullSecrets: gcr-json-key
+#imagePullSecrets: []
+#imagePullSecrets:
+#- name: gcr-json-key
+nameOverride: ""
+fullnameOverride: ""
+
+imageCredentials:
+  name: image-credentials
+  registry: gcr.io
+  username: _json_key
+  password: 
+
+serviceAccount:
+  # Specifies whether a service account should be created
+  #create: true
+  # Annotations to add to the service account
+  #annotations: {}
+  # The name of the service account to use.
+  # If not set and create is true, a name is generated using the fullname template
+  #name:
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+livenessProbe:
+  enabled: true
+  initialDelaySeconds: 120
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 6
+  successThreshold: 1
+readinessProbe:
+  enabled: true
+  initialDelaySeconds: 30
+  periodSeconds: 10
+  timeoutSeconds: 5
+  failureThreshold: 6
+  successThreshold: 1
+## If using an HTTPS-terminating load-balancer, the probes may need to behave
+## like the balancer to prevent HTTP 302 responses. According to the Kubernetes
+## docs, 302 should be considered "successful", but this issue on GitHub
+## (https://github.com/kubernetes/kubernetes/issues/47893) shows that it isn't.
+##
+# livenessProbeHeaders:
+# - name: X-Forwarded-Proto
+#   value: https
+# readinessProbeHeaders:
+# - name: X-Forwarded-Proto
+#   value: https
+livenessProbeHeaders: {}
+readinessProbeHeaders: {}
+
+## Kubernetes configuration
+## For minikube, set this to NodePort, elsewhere use LoadBalancer or ClusterIP
+##
+service:
+  type: LoadBalancer
+  ## HTTP Port
+  ##
+  port: 4900
+  ## HTTPS Port
+  ##
+  httpsPort: 443
+  ## HTTPS Target Port
+  ## defaults to https unless overridden to the specified port.
+  ## if you want the target port to be "http" or "80" you can specify that here.
+  ##
+  httpsTargetPort: https
+  ## Metrics Port
+  ##
+  metricsPort: 9117
+  ## Node Ports to expose
+  ## nodePorts:
+  ##   http: <to set explicitly, choose port between 30000-32767>
+  ##   https: <to set explicitly, choose port between 30000-32767>
+  ##   metrics: <to set explicitly, choose port between 30000-32767>
+  nodePorts:
+    http: ""
+    https: ""
+    metrics: ""
+  ## Enable client source IP preservation
+  ## ref http://kubernetes.io/docs/tasks/access-application-cluster/create-external-load-balancer/#preserving-the-client-source-ip
+  ##
+  externalTrafficPolicy: Cluster
+  annotations: {}
+  ## Limits which cidr blocks can connect to service's load balancer
+  ## Only valid if service.type: LoadBalancer
+  loadBalancerSourceRanges: []
+  ## Extra ports to expose (normally used with the `sidecar` value)
+  # extraPorts:
+
+## Configure the ingress resource that allows you to access the
+## WordPress installation. Set up the URL
+## ref: http://kubernetes.io/docs/user-guide/ingress/
+
+ingress:
+  enabled: false
+  annotations: {}
+    # kubernetes.io/ingress.class: nginx
+    # kubernetes.io/tls-acme: "true"
+  hosts:
+    - host: chart-example.local
+      paths: []
+  tls: []
+  #  - secretName: chart-example-tls
+  #    hosts:
+  #      - chart-example.local
+
+resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
