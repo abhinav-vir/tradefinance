@@ -19,3 +19,6 @@ Deploy tradefinance to Google Kubernetes Engine using Google Cloud Marketplace, 
 
 ### Command line instructions
 
+```console
+export GOOGLE_CLOUD_CREDENTIALS=`gcloud config get-value project`
+```
