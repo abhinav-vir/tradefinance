@@ -4,9 +4,9 @@
 tradefinance is a application for document automation, i.e. extraction of entities from digital documents.
 
 The 
-[Google Cloud Marketplace] [1] 
+[Google Cloud Marketplace][1] 
 is a easy way to deploy apps like GitLab to a 
-[Google Kubernetes Engine] [2] 
+[Google Kubernetes Engine][2] 
 cluster, with just a few clicks.
 
 [1]: https://console.cloud.google.com/
