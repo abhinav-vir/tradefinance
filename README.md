@@ -20,5 +20,10 @@ Deploy tradefinance to Google Kubernetes Engine using Google Cloud Marketplace, 
 ### Command line instructions
 
 ```console
-export GOOGLE_CLOUD_CREDENTIALS=`gcloud config get-value project`
+export TAG="1.0"
+export TF_MP_NAMESPACE="tf-app-namespace"
+export TF_MP_TLD="example.com"
+export GCR_REGISTRY="https://console.cloud.google.com/gcr/images/cloud-marketplace/GLOBAL/tf-public/tradefinance/deployer:${TAG}"
+export TF_MP_PARAMS="{\"APP_INSTANCE_NAME\": \"${TF_MP_APP_INSTANCE_NAME}\",\"NAMESPACE\": \"${TF_MP_NAMESPACE}\", \"global.hosts.domain\": \"${TF_MP_TLD}\"}"
+
 ```
