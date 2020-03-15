@@ -19,11 +19,10 @@ Deploy tradefinance to Google Kubernetes Engine using Google Cloud Marketplace, 
 
 ### Command line instructions
 
-```bash
-export TAG="1.0"
-export TF_MP_NAMESPACE="tf-app-namespace"
-export TF_MP_TLD="example.com"
-export GCR_REGISTRY="https://console.cloud.google.com/gcr/images/cloud-marketplace/GLOBAL/tf-public/tradefinance/deployer:${TAG}"
-export TF_MP_PARAMS="{\"APP_INSTANCE_NAME\": \"${TF_MP_APP_INSTANCE_NAME}\",\"NAMESPACE\": \"${TF_MP_NAMESPACE}\", \"global.hosts.domain\": \"${TF_MP_TLD}\"}"
+#### Prerequisites
 
-```
+##### Set up command-line tools
+
+You'll need the following tools in your development environment. If you are using Cloud Shell, then gcloud, kubectl, Docker, and Git are installed in your environment by default.
+
+* [gcloud](https://cloud.google.com/sdk/gcloud/)
