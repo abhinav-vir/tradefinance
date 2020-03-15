@@ -77,7 +77,7 @@ The Application resource is defined by the [Kubernetes SIG-apps](https://github.
 
 #### Install the app
 
-Navigate to the ```bash cert-manager``` directory:
+Navigate to the ```cert-manager``` directory:
 
 ##### Configure the app with environment variables
 
