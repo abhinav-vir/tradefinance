@@ -81,7 +81,7 @@ Navigate to the ```bash cert-manager``` directory:
 
 ##### Configure the app with environment variables
 
-Choose an instance name and [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) for the app. In most cases, you can use the ```bash default``` namespace.
+Choose an instance name and [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) for the app. In most cases, you can use the ```default``` namespace.
 
 ```bash 
 export APP_INSTANCE_NAME=cert-manager-1
@@ -104,7 +104,7 @@ export CAINJECTOR_REPLICAS=3
 
 ##### Create namespace in your Kubernetes cluster
 
-If you use a different namespace than the ```bash default```, run the command below to create a new namespace:
+If you use a different namespace than the ```default```, run the command below to create a new namespace:
 
 ```bash
 kubectl create namespace "${NAMESPACE}"
