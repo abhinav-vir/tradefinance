@@ -4,14 +4,14 @@
 
 replicaCount: 1
 
-image:
-  registry: gcr.io
-  repository: coe-marketplace-215839-public/tradefinance
-  tag: latest
+imageTradefinance:
+  #image.registry: gcr.io
+  image.repository: gcr.io/coe-marketplace-215839-public/tradefinance
+  image.tag: 2.0
   pullPolicy: Always
   #registry: docker.io
-  #repository: abhinavkbij/tradefinance
-  #tag: latest
+  #image.repository: abhinavkbij/tradefinance
+  #image.tag: 1.0
   #pullSecrets: gcr-json-key
 #imagePullSecrets: []
 #imagePullSecrets:

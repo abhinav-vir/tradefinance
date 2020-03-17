@@ -1,11 +1,16 @@
 applicationApiVersion: v1beta1
 
-x-google-marketplace:
-  # IMPORTANT: These IDs must match your listing ID in Marketplace.
-  partnerId: partner
-  solutionId: trade-finance
-
 properties:
+  imageTradefinance.image:
+    type: string
+    default: gcr.io/coe-marketplace-215839-public/tradefinance:1.0
+    x-google-marketplace:
+      type: IMAGE
+      image:
+        generatedProperties:
+          splitByColon:
+            before: imageTradefinance.repository
+            after: imageTradefinance.tag
   name:
     type: string
     x-google-marketplace:
@@ -14,7 +19,7 @@ properties:
     type: string
     x-google-marketplace:
       type: NAMESPACE
-
 required:
 - name
 - namespace
+- imageTradefinance.image
