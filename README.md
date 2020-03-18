@@ -2,7 +2,7 @@
 # Deploying tradefinance app to GKE via Google Cloud Marketplace
 
 ## Overview
-tradefinance is a application for document automation, i.e. extraction of entities from digital documents.
+tradefinance is a application for document automation, i.e. extraction of entities from digital documents. This solution uses Neural Network LSTM based optical character recognition (OCR) followed by Entity Recognition (Natural Language Processing approach) whcih improves the efficiency of the process of searching key payment terms from documents.
 
 
 The 
