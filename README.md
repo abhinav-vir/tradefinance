@@ -1,7 +1,9 @@
+
 # Deploying tradefinance app to GKE via Google Cloud Marketplace
 
 ## Overview
 tradefinance is a application for document automation, i.e. extraction of entities from digital documents.
+
 
 The 
 [Google Cloud Marketplace][1] 
@@ -11,6 +13,23 @@ cluster, with just a few clicks.
 
 [1]: https://console.cloud.google.com/
 [2]: https://cloud.google.com/kubernetes-engine/
+
+### Endpoints
+After application is deployed on kubernetes cluster an endpoint will be created(provided below) which the end user can use to extract the entities.
+
+ENDPOINT URL: "http://IP_ADDRESS/intelligent-doc-automation/trade-finance/api/v1/document"
+
+Request Type: POST
+
+Required Parameters:
+  | Name      | Value |
+  | ----------- | ----------- |
+  | file      | file should be passed here       |
+
+Sample Output:
+{'Destination Bank': 'THE BANK OF NEW YORK MELLON', 'Document Date': '12 JULY 2017', 'Destination Swift': 'IRVTUS3N', 'Issuing Bank': 'AUSTRALIA AND NEW ZEALAND BANKING GROUP LTD.', 'Beneficiary': 'SIAM PROTEINS CO. , LTD. .', 'Applicant': 'GIBSON LTD T/A SKRETTING AUSTRALIA', 'Destination Bank Location': 'NY 10286 UNITED STATES OF AMERICA'}
+
+
 ## Installation
 
 ### Quick install with Google Cloud Marketplace
