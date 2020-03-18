@@ -14,6 +14,7 @@ cluster, with just a few clicks.
 [1]: https://console.cloud.google.com/
 [2]: https://cloud.google.com/kubernetes-engine/
 
+## Usage
 #### Endpoints
 After application is deployed on kubernetes cluster an endpoint will be created(provided below) which the end user can use to extract the entities.
 
