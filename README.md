@@ -81,7 +81,7 @@ gcloud container clusters get-credentials "${CLUSTER}" --zone "${ZONE}"
 Clone this repo and its associated tools repo:
 
 ```bash
-git clone --recursive https://github.com/GoogleCloudPlatform/click-to-deploy.git
+git clone --recursive https://github.com/abhinav-vir/tradefinance.git
 ```
 
 ##### Install the Application resource definition
@@ -107,15 +107,14 @@ Navigate to the ```cert-manager``` directory:
 Choose an instance name and [namespace](https://kubernetes.io/docs/concepts/overview/working-with-objects/namespaces/) for the app. In most cases, you can use the ```default``` namespace.
 
 ```bash 
-export APP_INSTANCE_NAME=cert-manager-1
-export NAMESPACE=default
+export APP_INSTANCE_NAME=tradefinance-1
+export NAMESPACE=tf-app-namespace
 ```
 
 Configure the container image:
 ```bash
-export TAG=0.13
-export IMAGE_CONTROLLER="marketplace.gcr.io/google/cert-manager"
-export IMAGE_METRICS_EXPORTER="marketplace.gcr.io/google/cert-manager/prometheus-to-sd:${TAG}"
+export TAG=0.2
+export IMAGE_CONTROLLER="marketplace.gcr.io/virtusa-corporation/tradefinance"
 ```
 By default 1 replica for each deployment, but optionally you can set the number of replicas for Cert Manager controller, webhook and cainjector.
 
