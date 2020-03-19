@@ -2,7 +2,7 @@
 # Deploying tradefinance app to GKE via Google Cloud Marketplace
 
 ## Overview
-tradefinance is a application for document automation, i.e. extraction of entities from digital documents. This solution uses Neural Network LSTM based optical character recognition (OCR) followed by Entity Recognition (Natural Language Processing approach) whcih improves the efficiency of the process of searching key payment terms from documents.
+TradeFinance is an application for document automation, i.e. extraction of entities from digital documents. This solution uses Neural Network LSTM based optical character recognition (OCR) followed by Entity Recognition (Natural Language Processing approach) whcih improves the efficiency of the process of searching key payment terms from documents.
 
 
 The 
@@ -21,6 +21,9 @@ After application is deployed on kubernetes cluster an endpoint will be created(
 ##### ENDPOINT URL: 
  
 "http://IP_ADDRESS/intelligent-doc-automation/trade-finance/api/v1/document"
+
+##### Steps to get the IP_ADDRESS
+Go to Kubernetes Engine on GCP Console -> click on Workloads from left pane -> look for the namespace you created when deploying from marketplace with Type "Deployment" -> look for endpoints under Exposing Services.
 
 ##### Request Type: 
 POST
