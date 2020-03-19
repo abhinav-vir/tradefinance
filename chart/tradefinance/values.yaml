@@ -9,21 +9,10 @@ imageTradefinance:
   image.repository: gcr.io/coe-marketplace-215839-public/tradefinance
   image.tag: 2.0
   pullPolicy: Always
-  #registry: docker.io
-  #image.repository: abhinavkbij/tradefinance
-  #image.tag: 1.0
-  #pullSecrets: gcr-json-key
 #imagePullSecrets: []
 #imagePullSecrets:
-#- name: gcr-json-key
 nameOverride: ""
 fullnameOverride: ""
-
-imageCredentials:
-  name: image-credentials
-  registry: gcr.io
-  username: _json_key
-  password: 
 
 serviceAccount:
   # Specifies whether a service account should be created
